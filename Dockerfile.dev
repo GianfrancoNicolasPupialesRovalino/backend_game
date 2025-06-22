@@ -1,0 +1,17 @@
+FROM python:3.12-slim 
+
+# Establecer el directorio de trabajo
+WORKDIR /app
+
+# Instalar las dependencias
+COPY requirements.txt /app
+RUN pip install --no-cache-dir -r requirements.txt -t /app/.venv
+
+# Copiar los archivos del proyecto
+COPY src /app/src
+
+# Añadir .venv al PYTHONPATH para que reconozca las dependencias
+ENV PYTHONPATH="/app/.venv:$PYTHONPATH"
+
+# Exponer el puerto de la API
+EXPOSE ${PORT}
