@@ -36,7 +36,7 @@ def login_player_ctrl(data: AuthModel):
                 "player": {
                     "email": player.get("email"),
                     "name": player.get("name"),
-                    "lastname": player.get("lastname"),
+                    "lastname": player.get("last_name"),
                 },
             },
         )
