@@ -68,4 +68,4 @@ class ListeningMatch(BaseModel):
 
 
 db.connect()
-db.create_tables
+db.create_tables([Player, VocabularyMatch, GrammarMatch, ListeningMatch])
