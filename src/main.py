@@ -4,6 +4,9 @@ from fastapi.responses import HTMLResponse
 
 from src.routes.auth import auth_router
 from src.routes.player import player_router
+from src.routes.vocabulary_match import vocabulary_match_router
+from src.routes.grammar_match import grammar_match_router
+from src.routes.listening_match import listening_match_router
 from src.utils.handle_response import send_error_response
 
 app = FastAPI()
@@ -28,6 +31,11 @@ def read_root():
 
 app.include_router(auth_router, prefix="/api/v1/auth")
 app.include_router(player_router, prefix="/api/v1/player")
+app.include_router(vocabulary_match_router, prefix="/api/v1/vocabulary_match")
+app.include_router(grammar_match_router, prefix="/api/v1/grammar_match")
+app.include_router(listening_match_router, prefix="/api/v1/listening_match")
+
+
 
 
 
