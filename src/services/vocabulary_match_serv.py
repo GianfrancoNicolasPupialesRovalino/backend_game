@@ -71,7 +71,7 @@ def get_vocabulary_match_player_serv(idMatch: int):
     except Exception as error:
         raise error
     
-def get_top_scores_overall_serv():
+def get_top_scores_overall_serv(limit: int = 10):
     try:
         matches = VocabularyMatch.select(
             VocabularyMatch.idMatch,
@@ -81,7 +81,7 @@ def get_top_scores_overall_serv():
             VocabularyMatch.score,
             VocabularyMatch.time,
             VocabularyMatch.date
-        ).order_by(VocabularyMatch.score.desc()) # Ordena por score descendente
+        ).order_by(VocabularyMatch.score.desc()).limit(limit)
 
         serialized_matches = [{
             "idMatch": match.idMatch,
@@ -98,7 +98,7 @@ def get_top_scores_overall_serv():
     except Exception as error:
         raise error
 
-def get_top_scores_by_difficulty_serv(difficulty: str):
+def get_top_scores_by_difficulty_serv(difficulty: str, limit: int = 10):
     try:
         matches = VocabularyMatch.select(
             VocabularyMatch.idMatch,
@@ -108,7 +108,7 @@ def get_top_scores_by_difficulty_serv(difficulty: str):
             VocabularyMatch.score,
             VocabularyMatch.time,
             VocabularyMatch.date
-        ).where(VocabularyMatch.difficulty == difficulty).order_by(VocabularyMatch.score.desc())
+        ).where(VocabularyMatch.difficulty == difficulty).order_by(VocabularyMatch.score.desc()).limit(limit)
 
         serialized_matches = [{
             "idMatch": match.idMatch,
