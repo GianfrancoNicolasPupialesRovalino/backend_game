@@ -77,7 +77,7 @@ def get_grammar_match_player_serv(idMatch: int):
     except Exception as error:
         raise error
 
-def get_top_scores_overall_serv():
+def get_top_scores_overall_serv(limit: int = 10):
     try:
         matches = GrammarMatch.select(
             GrammarMatch.idMatch,
@@ -88,7 +88,7 @@ def get_top_scores_overall_serv():
             GrammarMatch.score,
             GrammarMatch.completion,
             GrammarMatch.date
-        ).order_by(GrammarMatch.score.desc()) # Ordena por score descendente
+        ).order_by(GrammarMatch.score.desc()).limit(limit)
 
         serialized_matches = [{
             "idMatch": match.idMatch,
@@ -106,7 +106,7 @@ def get_top_scores_overall_serv():
     except Exception as error:
         raise error
 
-def get_top_scores_by_difficulty_serv(difficulty: str):
+def get_top_scores_by_difficulty_serv(difficulty: str, limit: int = 10):
     try:
         matches = GrammarMatch.select(
             GrammarMatch.idMatch,
@@ -117,7 +117,7 @@ def get_top_scores_by_difficulty_serv(difficulty: str):
             GrammarMatch.score,
             GrammarMatch.completion,
             GrammarMatch.date
-        ).where(GrammarMatch.difficulty == difficulty).order_by(GrammarMatch.score.desc())
+        ).where(GrammarMatch.difficulty == difficulty).order_by(GrammarMatch.score.desc()).limit(limit)
 
         serialized_matches = [{
             "idMatch": match.idMatch,

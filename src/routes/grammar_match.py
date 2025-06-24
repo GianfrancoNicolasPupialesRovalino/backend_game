@@ -38,9 +38,9 @@ def get_grammar_matchs_ctrl():
         return get_details_error(error)
 
 @grammar_match_router.get("/top-scores/overall")
-def get_top_scores_overall_ctrl():
+def get_top_scores_overall_ctrl(limit: int = 10):
     try:
-        matches = get_top_scores_overall_serv()
+        matches = get_top_scores_overall_serv(limit)
 
         if not matches:
             return send_success_response(404, "No top scores found.")
@@ -50,9 +50,9 @@ def get_top_scores_overall_ctrl():
         return get_details_error(error)
 
 @grammar_match_router.get("/top-scores/by-difficulty/{difficulty}")
-def get_top_scores_by_difficulty_ctrl(difficulty: str):
+def get_top_scores_by_difficulty_ctrl(difficulty: str, limit: int = 10):
     try:
-        matches = get_top_scores_by_difficulty_serv(difficulty)
+        matches = get_top_scores_by_difficulty_serv(difficulty, limit)
 
         if not matches:
             return send_success_response(404, f"No top scores found for difficulty: {difficulty}.")
