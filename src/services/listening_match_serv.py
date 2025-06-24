@@ -78,7 +78,7 @@ def get_listening_match_player_serv(idMatch: int):
     except Exception as error:
         raise error
     
-def get_top_scores_overall_serv():
+def get_top_scores_overall_serv(limit: int = 10):
     try:
         matches = ListeningMatch.select(
                 ListeningMatch.idMatch,
@@ -89,7 +89,7 @@ def get_top_scores_overall_serv():
                 ListeningMatch.difficulty,
                 ListeningMatch.time,
                 ListeningMatch.date
-            ).order_by(ListeningMatch.score.desc())
+            ).order_by(ListeningMatch.score.desc()).limit(limit)
         serialized_matches = [{
             "idMatch": match.idMatch,
             "player": match.player.email,
@@ -107,7 +107,7 @@ def get_top_scores_overall_serv():
         raise error
     
 
-def get_top_scores_by_difficulty_serv(difficulty: str):
+def get_top_scores_by_difficulty_serv(difficulty: str, limit: int = 10):
     try:
         matches = ListeningMatch.select(
                 ListeningMatch.idMatch,
@@ -118,7 +118,7 @@ def get_top_scores_by_difficulty_serv(difficulty: str):
                 ListeningMatch.difficulty,
                 ListeningMatch.time,
                 ListeningMatch.date
-            ).where(ListeningMatch.difficulty == difficulty).order_by(ListeningMatch.score.desc())
+            ).where(ListeningMatch.difficulty == difficulty).order_by(ListeningMatch.score.desc()).limit(limit)
         serialized_matches = [{
             "idMatch": match.idMatch,
             "player": match.player.email,
