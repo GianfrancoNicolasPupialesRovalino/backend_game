@@ -20,3 +20,7 @@ docker-compose -f docker-compose.dev.yml up database-ug
 ```yml
 docker-compose -f docker-compose.dev.yml up
 ```
+
+## Consultas a la BD
+
+docker exec -it database-ug psql -U postgres -d games_usability
