@@ -1,7 +1,7 @@
-from  datetime import datetime
+import os
+from datetime import datetime
 from urllib.parse import urlparse
 
-from decouple import config
 from peewee import (
     CharField,
     DateTimeField,
@@ -12,7 +12,7 @@ from peewee import (
     PostgresqlDatabase,
 )
 
-DATABASE_URL = config("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 url = urlparse(DATABASE_URL)
 

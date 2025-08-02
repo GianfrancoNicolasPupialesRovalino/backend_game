@@ -1,11 +1,11 @@
 from datetime import datetime, timedelta
 from typing import Dict
 
-from decouple import config
+import os
 from jwt import ExpiredSignatureError, InvalidTokenError, decode, encode
 
 
-JWT_SECRET = config("JWT_SECRET", default="myjwtsecret")
+JWT_SECRET = os.getenv("JWT_SECRET_KEY", "myjwtsecret")
 
 # Funcion para generar un token JWT
 def generate_token(payload: Dict, expires_in: timedelta) -> str:
