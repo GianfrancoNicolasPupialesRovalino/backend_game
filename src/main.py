@@ -2,12 +2,12 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
-from src.routes.auth import auth_router
-from src.routes.player import player_router
-from src.routes.vocabulary_match import vocabulary_match_router
-from src.routes.grammar_match import grammar_match_router
-from src.routes.listening_match import listening_match_router
-from src.utils.handle_response import send_error_response
+from routes.auth import auth_router
+from routes.player import player_router
+from routes.vocabulary_match import vocabulary_match_router
+from routes.grammar_match import grammar_match_router
+from routes.listening_match import listening_match_router
+from utils.handle_response import send_error_response
 
 app = FastAPI()
 

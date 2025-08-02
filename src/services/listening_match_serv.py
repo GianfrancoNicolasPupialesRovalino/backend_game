@@ -1,8 +1,6 @@
-from src.database import ListeningMatch
+from database import ListeningMatch
+from models.listening_match_model import ListeningMatchModel
 
-from src.models.listening_match_model import ListeningMatchModel
-from src.utils.error_handle import get_details_error
-from src.utils.handle_response import send_success_response
 
 def create_listening_match(data: ListeningMatchModel):
     try:

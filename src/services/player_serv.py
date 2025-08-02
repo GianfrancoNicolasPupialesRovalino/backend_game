@@ -1,6 +1,6 @@
-from src.database import Player
-from src.models.player_model import PlayerModel
-from src.utils.bcrypt_handle import encrypt
+from database import Player
+from models.player_model import PlayerModel
+from utils.bcrypt_handle import encrypt
 
 
 

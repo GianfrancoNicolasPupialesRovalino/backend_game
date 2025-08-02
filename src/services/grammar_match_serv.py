@@ -1,8 +1,6 @@
-from src.database import GrammarMatch
+from database import GrammarMatch
+from models.grammar_match_model import GrammarMatchModel
 
-from src.models.grammar_match_model import GrammarMatchModel
-from src.utils.error_handle import get_details_error
-from src.utils.handle_response import send_success_response
 
 def create_grammar_match(data: GrammarMatchModel):
     try:

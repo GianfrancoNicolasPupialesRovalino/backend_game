@@ -2,14 +2,14 @@ from datetime import timedelta
 
 from fastapi import APIRouter
 
-from src.models.auth_model import AuthModel
-from src.models.player_model import PlayerModel
-from src.services.auth_serv import get_auth_player_serv
-from src.services.player_serv import create_player_serv
-from src.utils.jwt_handle import generate_token
-from src.utils.error_handle import get_details_error
-from src.utils.handle_response import send_success_response
-from src.utils.bcrypt_handle import verified
+from models.auth_model import AuthModel
+from models.player_model import PlayerModel
+from services.auth_serv import get_auth_player_serv
+from services.player_serv import create_player_serv
+from utils.jwt_handle import generate_token
+from utils.error_handle import get_details_error
+from utils.handle_response import send_success_response
+from utils.bcrypt_handle import verified
 
 
 auth_router = APIRouter()

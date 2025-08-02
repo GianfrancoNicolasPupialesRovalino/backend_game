@@ -1,6 +1,6 @@
 from peewee import DataError, DoesNotExist, IntegrityError, OperationalError
 
-from src.utils.handle_response import send_error_response
+from utils.handle_response import send_error_response
 
 
 def get_details_error(error: Exception):

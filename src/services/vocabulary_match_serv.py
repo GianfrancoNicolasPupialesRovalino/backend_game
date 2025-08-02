@@ -1,5 +1,5 @@
-from src.database import VocabularyMatch
-from src.models.vocabulary_match_model import VocabularyMatchModel
+from database import VocabularyMatch
+from models.vocabulary_match_model import VocabularyMatchModel
 
 
 def create_vocabulary_match(data: VocabularyMatchModel):

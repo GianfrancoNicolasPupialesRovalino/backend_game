@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 
 
-from src.services.player_serv import get_players_serv, get_player_by_email_serv
-from src.utils.error_handle import get_details_error
-from src.utils.handle_response import send_success_response
+from services.player_serv import get_players_serv, get_player_by_email_serv
+from utils.error_handle import get_details_error
+from utils.handle_response import send_success_response
 
 player_router = APIRouter()
 

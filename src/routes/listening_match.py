@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 
-from src.services.listening_match_serv import create_listening_match, get_listening_matchs, get_listening_match_player_serv, get_top_scores_overall_serv, get_top_scores_by_difficulty_serv
-from src.services.player_serv import get_player_by_email_serv
-from src.utils.handle_response import send_success_response
-from src.utils.error_handle import get_details_error
-from src.models.listening_match_model import ListeningMatchModel
+from services.listening_match_serv import create_listening_match, get_listening_matchs, get_listening_match_player_serv, get_top_scores_overall_serv, get_top_scores_by_difficulty_serv
+from services.player_serv import get_player_by_email_serv
+from utils.handle_response import send_success_response
+from utils.error_handle import get_details_error
+from models.listening_match_model import ListeningMatchModel
 
 listening_match_router = APIRouter()
 

@@ -1,6 +1,6 @@
 from fastapi import HTTPException, status, Request
 
-from src.utils.jwt_handle import verify_token
+from utils.jwt_handle import verify_token
 
 # Función para verificar el token JWT en la sesión
 def session_validator(request: Request):

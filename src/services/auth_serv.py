@@ -1,4 +1,4 @@
-from src.database import Player
+from database import Player
 
 def get_auth_player_serv(email: str):
     try:
