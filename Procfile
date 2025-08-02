@@ -1,1 +1,1 @@
-web: ./start.sh uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
+web: bash -c "cd src && uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"
