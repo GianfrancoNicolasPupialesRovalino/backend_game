@@ -13,7 +13,8 @@ app = FastAPI()
 
 # Configuration for CORS
 origins = [
-    "http://localhost:5173",
+    "http://localhost:5173",  # Desarrollo local
+    "https://wordshake2.netlify.app",  # Producción
 ]
 # incluir la URL del juego en producción 
 
